@@ -1,0 +1,2 @@
+- pwd   : present working directory
+- ls    : list files
