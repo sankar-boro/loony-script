@@ -14,3 +14,20 @@ then
 else
     echo "Not a root user."
 fi
+
+
+SUDO_USER=`id -un`
+
+if [[ ${?} -ne 0 ]]
+then
+    echo "Not a sudo user";
+    exit 1;
+fi
+
+SUDO_USER=`id -un`
+
+if [[ ${?} -eq "sankar" ]]
+then
+    echo "Username is ${SUDO_USER}";
+    exit 0;
+fi
