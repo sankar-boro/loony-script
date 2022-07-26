@@ -6,6 +6,9 @@ sudo apt install mysql-client
 echo 
 VERSION=$(mysql --version)
 echo $VERSION
+echo 
+sudo service mysql status
+
 
 # fix mysql_secure_installation
 
