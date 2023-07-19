@@ -1,0 +1,44 @@
+//5E7gC9qZGDnHLNfdv37Ps8bASdMUw123LcnBX1Pmt19ap8Ui
+hex!["5abc99f49921329dc4fe14b03315e3633950efd2806cda609eb5aa5c71a8ee79"].into(),
+//5CahUtHmDd8b2XMdLWCcncpggAK4CUPLh8NYJw5HVJeQEJmW
+hex!["16e0190a74300077d96a413617a396a79566d0bfd1b2dbd7ffe9ecf761cadf2b"].into(),
+//5DPPr4Dfa2LHNKW83a9cBZramSMvBLjSGsMkt3NpypqpRwor
+hex!["3a7d4466748066c0e78060c320a9d431a0f5769b58a9903b69d6af4b4b5adf63"].into(),
+//5GKY8hQNvCSX8J9XHYkxvJDxqe5c193Ys3APGCWd8tAEg2NM
+hex!["bc40e1d639a4f6abbb0bbd379d85c593be6fe50e437fe1cf8e9b7cb2163f3472"].into(),
+//5F2P5PjZkj1VanoEAVNx7d2oy5P2gVKLT4XMe8NoDyrkhzdZ
+hex!["82eefd044f6930dec98f84af9c22d2cf06a49ad632d96259ddc55b908c8d063e"].into(),
+
+
+=========================================================================================================================
+
+(
+    //5E7gC9qZGDnHLNfdv37Ps8bASdMUw123LcnBX1Pmt19ap8Ui
+    hex!["5abc99f49921329dc4fe14b03315e3633950efd2806cda609eb5aa5c71a8ee79"].into(),
+    //5C5MuHsrhmkBQNG2X1gDcYc3H5a9pFK5wjhXyn8mzJa3Fpms
+    hex!["008012573a4e334d065cd67895d1b7b1576e514d3f599c20d3b405c315a3da4f"].unchecked_into(),
+),
+(
+    //5CahUtHmDd8b2XMdLWCcncpggAK4CUPLh8NYJw5HVJeQEJmW
+    hex!["16e0190a74300077d96a413617a396a79566d0bfd1b2dbd7ffe9ecf761cadf2b"].into(),
+    //5G9HYJc1i1w7iLmQ5dC2JcPp2U5SQuzkxgGDz8wHd562bCpA
+    hex!["b46f4dc3ade8c29e2e9cf838db61f2da2e0db79df3c5de8698d58c2ccff59137"].unchecked_into(),
+),
+(
+    //5DPPr4Dfa2LHNKW83a9cBZramSMvBLjSGsMkt3NpypqpRwor
+    hex!["3a7d4466748066c0e78060c320a9d431a0f5769b58a9903b69d6af4b4b5adf63"].into(),
+    //5Cd47GSEQa6rnKp7icch89ns4hJMVPD7bDaqW65nxmG4p1nW
+    hex!["18ac06b60301a6912de38d3cad485b64806cf6f60d1e075a4ce6a73a3471a67d"].unchecked_into(),
+),
+(
+    //5GKY8hQNvCSX8J9XHYkxvJDxqe5c193Ys3APGCWd8tAEg2NM
+    hex!["bc40e1d639a4f6abbb0bbd379d85c593be6fe50e437fe1cf8e9b7cb2163f3472"].into(),
+    //5HYAA7qiC8nLQGoyBBECyfsZuRKRzmejEDZbjvsNV2NrhUCB
+    hex!["f21d546c36eca6d16a2d96cf45eddc26632db4bb0f7a819e72e953488b18844d"].unchecked_into(),
+),
+(
+    //5F2P5PjZkj1VanoEAVNx7d2oy5P2gVKLT4XMe8NoDyrkhzdZ
+    hex!["82eefd044f6930dec98f84af9c22d2cf06a49ad632d96259ddc55b908c8d063e"].into(),
+    //5G9TY4BaWSybPTfsYSZNXFVjVPsQXcn2XTeDPANh1guXNfne
+    hex!["b490f3cc564f039f658b99ea73c802eb426c7225ec3ade5976c836f984637c2e"].unchecked_into(),
+),

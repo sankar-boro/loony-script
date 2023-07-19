@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 set -e
 
+SECRET="daughter peasant twelve bless century neglect title mouse habit plate galaxy ticket"
+
 if [ "$#" -ne 1 ]; then
 	echo "Please provide the number of initial validators!"
 	exit 1
 fi
+
+# 1=loop_id
+# 2=stash/controller/babe
 
 generate_account_id() {
 	subkey inspect ${3:-} ${4:-} "$SECRET//$1//$2" | grep "Account ID" | awk '{ print $3 }'
@@ -44,14 +49,7 @@ AUTHORITIES=""
 for i in $(seq 1 $V_NUM); do
 	AUTHORITIES+="(\n"
 	AUTHORITIES+="$(generate_address_and_account_id $i stash)\n"
-	AUTHORITIES+="$(generate_address_and_account_id $i controller)\n"
-	AUTHORITIES+="$(generate_address_and_account_id $i babe '--scheme sr25519' true)\n"
-	AUTHORITIES+="$(generate_address_and_account_id $i grandpa '--scheme ed25519' true)\n"
-	AUTHORITIES+="$(generate_address_and_account_id $i im_online '--scheme sr25519' true)\n"
-	AUTHORITIES+="$(generate_address_and_account_id $i para_validator '--scheme sr25519' true)\n"
-	AUTHORITIES+="$(generate_address_and_account_id $i para_assignment '--scheme sr25519' true)\n"
-	AUTHORITIES+="$(generate_address_and_account_id $i authority_discovery '--scheme sr25519' true)\n"
-	AUTHORITIES+="$(generate_address_and_public_key $i beefy '--scheme ecdsa' true)\n"
+	AUTHORITIES+="$(generate_address_and_account_id $i aura '--scheme sr25519' true)\n"
 	AUTHORITIES+="),\n"
 done
 
