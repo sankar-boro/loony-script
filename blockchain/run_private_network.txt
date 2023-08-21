@@ -1,0 +1,85 @@
+Run a private relay chain 
+
+Download polkadot binary
+https://github.com/paritytech/polkadot/releases/download/v0.9.43/polkadot
+
+Download rococo local genesis chain spec for private network
+https://docs.substrate.io/assets/tutorials/relay-chain-specs/raw-local-chainspec.json
+
+
+Run –alice node as Validator
+
+lsof -i -P -n | grep LISTEN
+rm -rf *.log
+rm -rf *-logs
+rm -rf *_logs
+
+polkadot \
+--base-path ~/.data/relay_chain__1_logs \
+--chain ~/files/rococo/rococo-raw-local-chainspec.json \
+--alice \
+--port 30000 \
+--rpc-port 9000 \
+--node-key 0000000000000000000000000000000000000000000000000000000000000001 \
+--validator &> ~/.data/relay_chain__1.log &
+
+Run –bob node as Validator
+
+polkadot \
+--base-path ~/.data/relay_chain__2_logs \
+--chain ~/files/rococo/rococo-raw-local-chainspec.json \
+--bob \
+--port 30001 \
+--rpc-port 9001 \
+--validator \
+--bootnodes /ip4/127.0.0.1/tcp/30000/p2p/12D3KooWEyoppNCUx8Yx66oV9fJnriXwCcXwDDUA2kj6vnc6iDEp &> ~/.data/relay_chain__2.log &
+
+
+Run –charlie node as Validator
+
+polkadot \
+--base-path ~/.data/relay_chain__3_logs \
+--chain ~/files/rococo/rococo-raw-local-chainspec.json \
+--charlie \
+--port 30002 \
+--rpc-port 9002 \
+--validator \
+--bootnodes /ip4/127.0.0.1/tcp/30000/p2p/12D3KooWEyoppNCUx8Yx66oV9fJnriXwCcXwDDUA2kj6vnc6iDEp &> ~/.data/relay_chain__3.log &
+
+
+
+Run collator node of Humidefi parachain
+
+genesis-node \
+--collator \
+--force-authoring \
+--chain ~/files/humidefi/humidefi-update-raw.json \
+--base-path ~/.data/para_chain__1_logs \
+--port 30003 \
+--rpc-port 9003 \
+--ws-port 9004 \
+-- \
+--execution wasm \
+--chain ~/files/rococo/rococo-raw-local-chainspec.json \
+--port 30004 \
+--rpc-port 9005 \
+--ws-port 9006 \
+--bootnodes /ip4/127.0.0.1/tcp/30000/p2p/12D3KooWEyoppNCUx8Yx66oV9fJnriXwCcXwDDUA2kj6vnc6iDEp &> ~/.data/para_chain__1.log &
+
+
+genesis-node \
+--collator \
+--bob \
+--force-authoring \
+--chain ~/files/humidefi/humidefi-update-raw.json \
+--base-path ~/.data/para_chain__2_logs \
+--port 30005 \
+--rpc-port 9007 \
+--ws-port 9008 \
+-- \
+--execution wasm \
+--chain ~/files/rococo/rococo-raw-local-chainspec.json \
+--port 30006 \
+--rpc-port 9009 \
+--ws-port 9010 \
+--bootnodes /ip4/127.0.0.1/tcp/30000/p2p/12D3KooWEyoppNCUx8Yx66oV9fJnriXwCcXwDDUA2kj6vnc6iDEp &> ~/.data/para_chain__2.log &
